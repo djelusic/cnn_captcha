@@ -32,10 +32,10 @@ neke korekcije radi zadovoljavajuće za naše potrebe.
 
 Glavni koraci samog algoritma su:
  
-0) inicijalizacija parametara i pohranjivanje iz ručno generiranih podataka
-1) implementacija računanja funkcije troška i gradijenta
-2) učenje parametara (treniranje modela)
-3) testiranje performansi modela i ispisivanje rezultata
+0. inicijalizacija parametara i pohranjivanje iz ručno generiranih podataka
+1. implementacija računanja funkcije troška i gradijenta
+2. učenje parametara (treniranje modela)
+3. testiranje performansi modela i ispisivanje rezultata
  
  
 Opišimo ukratko o čemu se radi u svakom koraku. Za 0. korak se brine funkcija cnnInitParams. 
@@ -85,12 +85,16 @@ Tu je implementirana verzija koja stvara array nula, ali bi bolje radilo kada bi
 niz malih vrijednosti oko 0 koje su, uz to, normalno distribuirane (dobijemo nešto malo bolji rezultat). 
 Važnost ovakvog postupka je u tome da ako svi parametri krenu s istom vrijednosti, tada 
 će svi skriveni slojevi završiti učeći istu funkciju inputa, tako da randomiziranje služi 
-u svrhu razbijanja simetrije. Prvi korak ima nekoliko zanimljivih dodataka. Tu smo dodali 
+u svrhu razbijanja simetrije. 
+
+Prvi korak ima nekoliko zanimljivih dodataka. Tu smo dodali 
 npr. varijablu USE_GPU koja može služiti pri paralelizaciji koda (koja i inače prirodno 
 odgovara neuronskoj mreži). To mogu iskoristiti računala s više CPU-ova i GPU-ova. Još jedan 
 dodatak se odnosi na USE_WEIGHT_DECAY varijablu koja koristi pri smanivanju težina u svakoj iteraciji 
-za neki maleni faktor (sprječava kompleksne aprokcimacije). Također je uvedena opcionalnost 
-korištenja 2 aktivacijske funkcije, pa tako možemo birati sigmoidu ili ReLU funkciju. U našem slučaju 
+za neki maleni faktor (sprječava kompleksne aprokcimacije). 
+
+Također je uvedena opcionalnost korištenja 2 aktivacijske funkcije, pa tako 
+možemo birati sigmoidu ili ReLU funkciju. U našem slučaju 
 se pokazalo kako ReLU funcija daje malo bolje rezultate (90.24% naspram 88.6% u korist ReLU), pa je ista 
 i korištena. Sama ideja traženja minimuma počiva na metodi gdje se postupno približavamo minimumu uz 
 pomoć našeg koeficjenta učenja  i verzije derivacije (koja ako je negativna gura pretragu “natrag”, 
