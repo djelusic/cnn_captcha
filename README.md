@@ -14,7 +14,7 @@ Oznake skupa se nalaze u `captcha_xval_codes.txt`
 **importC74k.m** - importira font dataset iz baze C74k. Slike se resizaju na 50x50
 i normaliziraju.
 
-**import_chars.m** - vrši k-struku cross-validaciju (k=6) nad skupom single_chars_trainset
+**import_chars.m** - vrši k-struku cross-validaciju (`k=6`) nad skupom single_chars_trainset
 koji se sastoji od 60000 znakova (generiranih istom skriptom kao i captche)
 sa defaultnom distorzijom i šumom. Prilikom importiranja trening i testnih skupova 
 se vrši normalizacija podataka. Oznake skupa se nalaze u `chars_codes.txt`
