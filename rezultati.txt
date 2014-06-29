@@ -1,0 +1,7 @@
+Cross-validacija (k=5, trening i testni skupovi generirani segmentacijom, 5 epoha): [90.240000000000000,89.420000000000000,88.500000000000000,87.560000000000000,88], mean: 88.75%
+Cross-validacija (k=6, trening i testni skupovi generirani skriptom, 2 epohe): [99.240000000000000,99.110000000000000,99.290000000000000,99.150000000000000,98.810000000000000,99.100000000000000], mean: 99.1167% 
+Prepoznavanje captchi sa 5 znakova (nakon treninga na skupu generiranom segmentacijom): 75%
+Prepoznavanje captchi sa 6 znakova (nakon treninga na skupu generiranom skriptom): 27% (mislim da ovo ne treba ni spominjati :P)
+Početne vrijednosti, normalna vs uniformna razdioba: nema razlike, 90.16% vs 90.24%
+relu vs sigmoid: 90.24% vs 88.6%
+c74k (trening skup od 10000 slučajno odabranih primjera): 84%
