@@ -6,13 +6,15 @@ Upute za pokretanje
 
 Prije pokretanja staviti sadržaje datoteke datasets.zip u radni direktorij.
 
+**ogledni_primjer.m** - uzima prvih 2000+500 (zbog brzine) captchi iz skupa `captcha_xval_set` i 
+trenira mrežu pa potom testira prepoznavanje captchi (pomoću `test_captcha.m`) od 5 
+znakova i ispisuje rezultat. Za najbolji rezultat trenirati mrežu na čitavom skupu
+`captcha_xval_set` (recimo pomoću `captcha_xval.m`) pa pokrenuti `test_captcha.m`
+
 **captcha_xval.m** - vrši k-struku cross-validaciju (`k=5`) nad skupom `captcha_xval_set`
 koji se sastoji od 5000 captchi duljine 5 sa defaultnom distorzijom i šumom. Prilikom
 importiranja trening i testnih skupova se vrši segmentacija, čišćenje šuma i normalizacija.
 Oznake skupa se nalaze u `captcha_xval_codes.txt`
-
-**importC74k.m** - importira font dataset iz baze C74k. Slike se resizaju na 50x50
-i normaliziraju.
 
 **import_chars.m** - vrši k-struku cross-validaciju (`k=6`) nad skupom single_chars_trainset
 koji se sastoji od 60000 znakova (generiranih istom skriptom kao i captche)
@@ -20,7 +22,8 @@ sa defaultnom distorzijom i šumom. Prilikom importiranja trening i testnih skup
 se vrši normalizacija podataka. Oznake skupa se nalaze u `chars_codes.txt`
 
 **test_captcha.m** - testira prepoznavanje cijelih captchi od 5 znakova. Potrebna je
-varijabla opttheta koja se dobije treniranjem modela (npr. pomoću `captcha_xval.m`)
+varijabla opttheta koja se dobije treniranjem modela (npr. pomoću oglednog primjera ili 
+`captcha_xval.m`)
 
 Programska dokumentacija
 ------------------------
@@ -38,11 +41,11 @@ Glavni koraci samog algoritma su:
 3. testiranje performansi modela i ispisivanje rezultata
  
  
-Opišimo ukratko o čemu se radi u svakom koraku. Za 0. korak se brine funkcija cnnInitParams. 
+Opišimo ukratko o čemu se radi u svakom koraku. Za 0. korak se brine funkcija `cnnInitParams`. 
 Najbitnije je bilo inicijalizirati parametre kao što su `Wc`,`Wd`, `bc`,`bd` koji postavljaju inicijalne težine i 
 inicijalne bias gradijente. 
 
-Cijeli prvi korak se svodi na implementiranje funkcije cnnCost gdje 
+Cijeli prvi korak se svodi na implementiranje funkcije `cnnCost` gdje 
 dobivamo više rezultata. Dobijemo ukupno odstupanje od pravog rezultata, sve gradijente koji su nam 
 potrebni za gradijentni spust te predviđanja modela (klasifikaciju). Glavni dio funkcije `cnnCost` 
 se svodi na 4 dijela. 
