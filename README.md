@@ -103,3 +103,8 @@ i korištena. Sama ideja traženja minimuma počiva na metodi gdje se postupno p
 pomoć našeg koeficjenta učenja  i verzije derivacije (koja ako je negativna gura pretragu “natrag”, 
 dok u suprotnom smjeru gura pretragu “naprijed” prema minimumu). 
 
+
+**Autori:**
+
+Jure Šiljeg i Daniel Jelušić
+
