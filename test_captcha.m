@@ -44,5 +44,6 @@ end
 if preds' == labs
 suma = suma+1;
 end
-suma
 end
+
+fprintf('%d of 500 captchas have been successfully identified, accuracy is %f%%\n',suma, suma/5);

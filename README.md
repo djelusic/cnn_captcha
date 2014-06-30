@@ -4,7 +4,8 @@ cnn_captcha
 Upute za pokretanje
 -------------------
 
-Prije pokretanja staviti sadržaje datoteke datasets.zip u radni direktorij.
+Prije pokretanja staviti sadržaje datoteke datasets.zip u radni direktorij i dodati radni
+direktorij i direktorij segment u MATLAB path.
 
 **ogledni_primjer.m** - uzima prvih 2000+500 (zbog brzine) captchi iz skupa `captcha_xval_set` i 
 trenira mrežu pa potom testira prepoznavanje captchi (pomoću `test_captcha.m`) od 5 
